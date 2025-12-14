@@ -17,14 +17,18 @@ const App = () => {
     <div>
         <h3>Enter your budget to check available items:</h3>
         <input type="number" value={input} onChange={e=>setInput(e.target.value)}/>
-        <h3>Items you can buy are in Green color</h3>
         <table>
-          {items.map((item)=>(
+          <tbody>
+            <tr>
+              <th>Items you can buy are in Green color</th>
+            </tr>
+            {items.map((item)=>(
             <tr>
               <td>{item.name}</td>
               <td style={{color:input>=item.price?"Green":"Red"}}>{item.price}</td>
             </tr>
           ))}
+          </tbody>
         </table>
     </div>
   )
